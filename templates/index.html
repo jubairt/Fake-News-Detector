@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #050e2d, #090979, #000000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 123, 255, 0.5);
+      padding: 40px;
+      height: auto;
+      width: 90%;
+      height: 90%;
+      max-width: 700px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #00ffff, #1a75ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 180px;
+      padding: 20px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 2px solid #00ffff;
+      background-color: #0b1126;
+      color: #ffffff;
+      resize: none;
+      transition: 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #00ffff;
+      outline: none;
+      box-shadow: 0 0 12px #00ffff66;
+    }
+
+    .detect-btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      background-color: #1a75ff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .detect-btn:hover {
+      background-color: #0052cc;
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00cc66;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container animate__animated animate__fadeIn">
+    <div class="title">Fake News Detector</div>
+    <div class="subtitle">Analyze news articles and find out if they are real or fake using powerful AI models.</div>
+
+    <!-- Flask-connected form -->
+    <form method="POST" action="/predict">
+      <textarea name="news_text" placeholder="Paste or type the news article here...">{{ request.form.news_text }}</textarea>
+      <button class="detect-btn" type="submit">Detect</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">{{ prediction }}</div>
+    {% endif %}
+
+    <footer>
+      Powered by Machine Learning | Created with 💙 for Journalism Integrity
+    </footer>
+  </div>
+</body>
+</html>
