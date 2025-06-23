@@ -12,9 +12,10 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 
 - **Source**: [Fake and Real News Dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - **Details**:
-  - Contains 2 classes: `FAKE` and `REAL`
-  - Fields: `title`, `text`, `subject`, `date`
-  - Used only the **`text`** field for training
+  - Contains 2 classes: `Fake` and `Real`
+  - Fake Data: 5000, Real Data: 4900
+  - Fields:  `Text`, `label`
+  - Used only the **`Text`** field for training
 
 ---
 
