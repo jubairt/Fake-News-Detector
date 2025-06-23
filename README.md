@@ -2,7 +2,7 @@
 
 ![Project Screenshot](Web_interface.png)
 
-## 🧠 Overview
+## 📝 Overview
 
 This project detects whether a news article is **Real** or **Fake** using Natural Language Processing (NLP) and machine learning. We used **spaCy’s GloVe embeddings** (`en_core_web_lg`) to convert articles into dense vector representations and then trained traditional classifiers (like **Naive Bayes** and **KNN**) for classification.
 
@@ -19,12 +19,12 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 
 ---
 
-## 🚀 Project Pipeline
+## 🔁 Project Pipeline
 
 ### 🔹 1. Data Loading & Cleaning
 - Loaded dataset using `pandas`
 - Removed missing values and unnecessary fields
-- Converted labels (`FAKE` → 0, `REAL` → 1)
+- Converted labels (`Fake` → 0, `Real` → 1)
 
 ### 🔹 2. Text Vectorization
 - Used **spaCy**’s `en_core_web_lg` (300-dimensional GloVe)
@@ -39,7 +39,7 @@ This project detects whether a news article is **Real** or **Fake** using Natura
   - Achieved ~94% accuracy
 - **K-Nearest Neighbors (KNN)**
   - Used `euclidean` distance on raw 300D embeddings
-  - Achieved ~99% accuracy 🎯
+  - Achieved ~99% accuracy 
 
 ### 🔹 5. Evaluation
 - Classification report (Precision, Recall, F1)
@@ -51,7 +51,7 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 
 ---
 
-## 🔍 Key Insights
+## 💬 Key Insights
 
 | Model          | Accuracy | Notes |
 |----------------|----------|-------|
@@ -63,21 +63,21 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 
 ---
 
-## 🧪 Live Prediction App (Flask)
+## 📡 Live Prediction App (Flask)
 
 ### 🛠 Features:
 - Web form input
 - Real-time prediction using trained model
-- Returns `FAKE` or `REAL` immediately
+- Returns `Fake` or `Real` immediately
 
-### 🖥️ How It Works
+### ⚙️ How It Works
 - User inputs news article text
 - Text is processed → vectorized via spaCy → classified using trained KNN model
 - Result is displayed on the webpage
 
 ---
 
-## 🧰 Tech Stack
+## 	📦 Tech Stack
 
 - **NLP**: `spaCy`, `en_core_web_lg`
 - **ML**: `scikit-learn`
@@ -87,92 +87,9 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 
 ---
 
-## 📂 Project Structure
+## 🏁 Conclusion
 
-```
-├── app.py                     # Flask application
-├── artifacts/
-│   ├── model.pkl              # Trained model (KNN)
-│   ├── confusion_matrix.png   # Evaluation plot
-│   └── screenshot.png         # Project UI screenshot
-├── templates/
-│   └── index.html             # HTML frontend
-├── static/                    # (Optional) CSS or JS files
-├── README.md                  # Project documentation
-├── requirements.txt           # Python dependencies
-└── utils/
-    └── preprocess.py          # Vectorization or helper functions
-```
+This project demonstrates how powerful word embeddings like GloVe can be when combined with traditional machine learning models. By leveraging spaCy’s `en_core_web_lg` vectors, we achieved high accuracy in classifying fake and real news articles. The integration of a Flask-based web interface makes the solution interactive and ready for real-world testing. 
 
----
-
-## ▶️ Run Locally
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/fake-news-detector.git
-cd fake-news-detector
-```
-
-### 2. Create virtual environment
-```bash
-python -m venv venv
-source venv/bin/activate  # For Linux/Mac
-venv\Scripts\activate     # For Windows
-```
-
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-python -m spacy download en_core_web_lg
-```
-
-### 4. Run the Flask app
-```bash
-python app.py
-```
-
-### 5. Open in browser
-Visit: `http://127.0.0.1:5000/`
-
----
-
-## 🌐 Deployment (Optional)
-
-You can deploy this on:
-- **Render**: Free and simple
-- **Hugging Face Spaces**: Great for ML demos
-- **Railway / Vercel / Heroku**
-
-Let me know if you need a deployment tutorial!
-
----
-
-## 📈 Future Improvements
-
-- 🔄 Use **BERT** or **MiniLM** embeddings from `sentence-transformers`
-- 🌐 Add **API endpoint** for JSON-based prediction
-- 🛡️ Improve text preprocessing & language detection
-- 💬 Add confidence scores with prediction
-- 📊 Use t-SNE or PCA to visualize real vs fake clusters
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! Feel free to fork the repo and propose improvements or fixes.
-
----
-
-## 📜 License
-
-[MIT License](LICENSE)
-
----
-
-## 🙋‍♂️ Author
-
-Made with ❤️ by **Jubair** (a.k.a. `silend walker`)  
-Data Science & ML Enthusiast | Discipline | Code | Fitness  
-Connect: [Your LinkedIn] | [Your GitHub] | [Your Blog (if any)]
+This project not only strengthens understanding of NLP pipelines but also showcases how classical ML techniques can still be highly effective when paired with meaningful feature representations.
 
