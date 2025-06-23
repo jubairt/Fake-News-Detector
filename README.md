@@ -1,6 +1,6 @@
 # 📰 Fake News Detection using spaCy Embeddings & ML
 
-![Project Screenshot](Web__interface.png)
+![Project Screenshot](Web_interface.png)
 
 ## 🧠 Overview
 
