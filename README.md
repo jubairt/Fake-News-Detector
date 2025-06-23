@@ -1,6 +1,6 @@
 # 📰 Fake News Detection using spaCy Embeddings & ML
 
-![Project Screenshot](Web_interface.png)
+![Project Screenshot](artifacts/Web_interface.png)
 
 ## 📝 Overview
 
@@ -46,7 +46,7 @@ This project detects whether a news article is **Real** or **Fake** using Natura
 - Confusion Matrix (see below 👇)
 
 <p align="center">
-  <img src="artifacts/confusion_matrix.png" alt="Confusion Matrix" width="400"/>
+  <img src="artifacts/confusion_metrix.png" alt="Confusion Matrix" width="400"/>
 </p>
 
 ---
